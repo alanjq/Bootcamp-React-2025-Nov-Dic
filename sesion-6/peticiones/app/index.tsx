@@ -8,18 +8,15 @@ export default function Index() {
   // Para el proyecto
   const botones = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", 'C', '=']
 
-  const handleButtonClic = (etiqueta) => {
+  const handleButtonClic = (etiqueta : string) => {
     switch (etiqueta) {
       case "=":
       case "C":
       break;
-
-      default:
-        let numero = parseInt(etiqueta)
-        // operacion
-        console.log('clic en', numero)
     }
   }
+
+  console.log('Hola')
 
   return (
     <View
@@ -38,10 +35,11 @@ export default function Index() {
       <ClimaCiudad nombre={texto} />
 
       <View>
-        {botones.map((etiqueta) => <Button title={etiqueta} onPress={() => handleButtonClic(etiqueta)} />)}
+        {botones.map((etiqueta, index) => <Button key={index} title={etiqueta} onPress={() => handleButtonClic(etiqueta)} />)}
       </View>
 
       {/* <ClimaCiudad nombre="Monterrey" /> */}
-    </View>
+
+      </View>
   );
 }

@@ -1,19 +1,15 @@
 {
   "expo": {
-    "name": "peticiones",
-    "slug": "peticiones",
+    "name": "tienda",
+    "slug": "tienda",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "peticiones",
+    "scheme": "tienda",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.alanjq.peticiones",
-      "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
-      }
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
@@ -23,11 +19,11 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false,
-      "package": "com.alanjq.peticiones"
+      "predictiveBackGestureEnabled": false
     },
     "web": {
       "output": "static",
+      "bundler": "metro",
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
@@ -48,13 +44,6 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    },
-    "extra": {
-      "router": {},
-      "eas": {
-        "projectId": "9bf3133c-62e1-48fd-ad78-52ba506341f6"
-      }
-    },
-    "owner": "alanjq"
+    }
   }
 }

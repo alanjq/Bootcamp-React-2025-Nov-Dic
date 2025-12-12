@@ -1,15 +1,15 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 
 interface IClimaCiudad {
-    nombre: String
+    nombre: string
 }
 
 export default function ClimaCiudad({ nombre }: IClimaCiudad) {
     const [error, setError] = useState(true)
 
     const [ciudad, setCiudad] = useState(nombre)
-    const [temperatura, setTemperatura] = useState()
+    const [temperatura, setTemperatura] = useState(0)
     const [viento, setViento] = useState()
     const [humedad, setHumedad] = useState()
     // Mensaje que indica el clima
@@ -25,7 +25,8 @@ export default function ClimaCiudad({ nombre }: IClimaCiudad) {
                     let resultados = data.list[0]
                     console.log(resultados)
                     setPrevision(resultados.weather[0].description)
-                    setTemperatura(Math.round(resultados.main.temp / 10))
+                    let newTemp = Math.round(resultados.main.temp / 10)
+                    setTemperatura(newTemp)
                     setHumedad(resultados.main.humidity)
                     setViento(resultados.wind.speed)
                     setError(false)
